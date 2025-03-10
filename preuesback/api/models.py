@@ -50,6 +50,9 @@ class Avatar(AtributosBase):
     nombre = models.CharField(max_length = 50, unique = True)
     dirAvatar = models.CharField(max_length = 100, unique = True)
 
+    class Meta:
+        db_table = "avatar"
+
 class Usuario(AbstractBaseUser,AtributosBase,PermissionsMixin):
     username = models.CharField(max_length = 50, unique = True)
     email = models.CharField(max_length = 100, unique = True)
